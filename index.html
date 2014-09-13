@@ -1,79 +1,128 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Cast : ">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Cast</title>
+    <meta charset="utf-8">
+    <title>Chromecast URL Player</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootswatch.min.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Jura:600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+    <script type="text/javascript" src="js/castplayer.js"></script>
+    <script type="text/javascript" src="js/urlplayer.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42108651-2', 'foamsnet.com');
+      ga('send', 'pageview');
+    </script>
   </head>
-
   <body>
+    <!-- top bar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand" style="font-family: 'Jura', sans-serif; font-size: 200%;">Chromecast URL Player</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/vickyg3/UrlPlayer" target="_blank">Source Code</a></li>
+          </ul>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/quangpham/cast">View on GitHub</a>
-
-          <h1 id="project_title">Cast</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/quangpham/cast/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/quangpham/cast/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+        </div>
+      </div>
     </div>
+    <!-- end of top bar -->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Cast maintained by <a href="https://github.com/quangpham">quangpham</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+    <!-- main body -->
+    <div class="container">
+      <br/>
+      <div class="alert alert-info" style="text-align: center; display:none;" id="controls">
+        Now playing <b id="player_now_playing"></b>
+        <br/><br/>
+        <button onclick="pause();" class="btn btn-default">
+          <span class="glyphicon glyphicon-pause"></span>
+          Pause
+        </button> &nbsp;
+        <button onclick="resume();" class="btn btn-default">
+          <span class="glyphicon glyphicon-play"></span>
+          Resume
+        </button> &nbsp; &nbsp;
+        <span id="player_current_time"></span> / 
+        <span id="player_duration"></span> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button onclick="seek(false);" class="btn btn-default">
+          <span class="glyphicon glyphicon-backward"></span>
+          Backward
+        </button> &nbsp; 
+        <select class="form-control" style="width: 50px;" id="player_seek">
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="60">60</option>
+        </select> minutes 
+        <button onclick="seek(true);" class="btn btn-default">
+          <span class="glyphicon glyphicon-forward"></span>
+          Forward
+        </button> &nbsp; 
+        <button onclick="stop();" class="btn btn-default">
+          <span class="glyphicon glyphicon-stop"></span>
+          Stop
+        </button>
+        <button onclick="volumeMute();" class="btn btn-default">
+          <span class="glyphicon glyphicon-volume-off"></span>
+        </button>
+        <button onclick="volumeDown();" class="btn btn-default">
+          <span class="glyphicon glyphicon-volume-down"></span>
+        </button>
+        <button onclick="volumeUp();" class="btn btn-default">
+          <span class="glyphicon glyphicon-volume-up"></span>
+        </button>
+      </div>
+      <br/><br/>
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>4 simple steps to playback any video or view any image on Chromecast</h4>
+          <br/>
+          <ol>
+            <li id="extension" style="margin-bottom:10px;">
+              Checking for Chromecast Extension. If you know you don't have the extension, <a href="https://chrome.google.com/webstore/detail/google-cast/boadgeojelhgndaghljhdicfkmllpafd" target="_blank">Click here to Install it</a> and then reload this page.
+            </li>
+            <li style="margin-bottom:10px;">
+              <a onclick="launchApp();" id="chromecast">
+                Click here to connect to your Chromecast
+              </a>
+            </li>
+            <li style="margin-bottom:10px;">
+              <input 
+                type="text"
+                class="form-control"
+                style="width: 800px;"
+                id="url"
+                placeholder="Enter or paste a URL to play a video or view an image on Chromecast" />
+            </li>
+            <li style="margin-bottom:10px;">
+              <button onclick="startPlayback();" id="modal_play" type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-play"></span>
+                <span id="modal_play_text">Connect to Chromecast to Start Playback</span>
+              </button>
+            </li>
+          </ol>
+          <br/><br/>
+          <a href="https://developers.google.com/cast/docs/media" target="_blank">List of media formats supported by Chromecast (Opens in a new tab)</a>
+        </div>
+      </div>
+   </div>
+    <!-- end of main body -->
   </body>
 </html>
